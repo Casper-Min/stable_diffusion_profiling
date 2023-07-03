@@ -28,7 +28,7 @@ After attach container, activate conda environment "sd_profile", then
 
 ```
 cd /home/workspace/
-bash init_profile.sh
+bash init_profiling.sh
 ```
 
 ## Installation Test
