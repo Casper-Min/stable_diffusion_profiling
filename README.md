@@ -27,7 +27,7 @@ bash init_docker.sh
 After attach container, activate conda environment "sd_profile", then
 
 ```
-mv /home/workspace/
+cd /home/workspace/
 bash init_profile.sh
 ```
 
@@ -36,7 +36,7 @@ bash init_profile.sh
 Check whether docker container/conda environment is properly installed.
 
 ```
-mv /home/workspace/
+cd /home/workspace/
 python test.py
 ```
 
