@@ -141,20 +141,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
-
-
-    
-    # batch_size = len(prompt)                            # Number of prompts to generate images #
-    # torch_device = torch.device("cuda", args.cuda_id)   # GPU device #
-    # output_path = args.path                             # Path to save the generated images #
-    
-    # model_id = args.model_id                            # model id of stable diffusion model #
-    # height = args.height                                # default height of Stable Diffusion #
-    # width = args.width                                  # default width of Stable Diffusion #
-    # prompt = [args.prompt]                              # The prompt or prompts to guide the image generation #
-    # num_images_per_prompt = args.images_num             # Number of images to generate per prompt #
-    # num_inference_steps = args.steps                    # Number of denoising steps #
-    # guidance_scale = args.guidance                      # Scale for classifier-free guidance #
-    # generator = torch.manual_seed(args.seed)            # Seed generator to create the inital latent noise #
-    
