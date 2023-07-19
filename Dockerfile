@@ -4,8 +4,8 @@ FROM nvidia/cuda:12.1.1-devel-ubuntu22.04
 
 # Dockerfile Metadata
 LABEL auther="Minyong Yoon <ycivil93@hanyang.ac.kr>"
-LABEL version="0.0.1"
-LABEL description="Profiling for huggingface-based stable diffusion"
+LABEL version="0.0.2"
+LABEL description="Profiling for huggingface-based stable diffusion 1,2,XL"
 
 # Environment Variables
 ENV DEBIAN_FRONTEND=noninteractive
@@ -74,7 +74,7 @@ WORKDIR /home/workspace
 COPY workspace/ /home/workspace
 
 # conda install
-RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh -O ~/anaconda.sh && \
+RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2023.07-1-Linux-x86_64.sh -O ~/anaconda.sh && \
     /bin/bash ~/anaconda.sh -b -p /opt/conda && \
     rm ~/anaconda.sh && \
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \

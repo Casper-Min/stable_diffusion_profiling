@@ -58,7 +58,7 @@ cdef class Profile:
 
         if ( os.path.basename(frame.f_code.co_filename) not in \
             ["module.py","nvtx.py","_contextlib.py","cached.py","grad_mode.py","threading.py","_monitor.py"] ) \
-            and ( frame.f_code.co_name not in ["decorate_context","_call_impl"] ) :
+            and ( frame.f_code.co_name not in ["decorate_context","_call_impl", "_call_"] ) :
             # profile function meant to be used with sys.setprofile
             if event == "call":
                 name = frame.f_code.co_name
