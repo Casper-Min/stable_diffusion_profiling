@@ -32,6 +32,7 @@ RUN apt-get install -y --no-install-recommends \
         libxcb-glx0 \
         libxcb-xkb1 \
         libxcomposite1 \
+        libxcb-cursor0 \
         libxcursor1 \
         libxdamage1 \
         libxi6 \
