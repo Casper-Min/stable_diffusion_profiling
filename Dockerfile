@@ -1,11 +1,12 @@
 # Dockerfile
 # server image
-FROM nvidia/cuda:12.1.1-devel-ubuntu22.04
+# FROM nvidia/cuda:12.3.0-cudnn-devel-ubuntu22.04
+FROM nvidia/cuda:12.4.1-devel-ubuntu22.04
 
 # Dockerfile Metadata
 LABEL auther="Minyong Yoon <ycivil93@hanyang.ac.kr>"
-LABEL version="0.0.2"
-LABEL description="Profiling for huggingface-based stable diffusion 1,2,XL"
+LABEL version="0.0.3"
+LABEL description="Profiling for huggingface-based Transformer and Stable Diffusion 1,2,XL"
 
 # Environment Variables
 ENV DEBIAN_FRONTEND=noninteractive
@@ -50,8 +51,8 @@ RUN apt-get install -y --no-install-recommends \
         qtbase5-dev \
         qt5-qmake \
         cmake \
-        cuda-nsight-compute-12-1 \
-        cuda-nsight-systems-12-1 && \
+        cuda-nsight-compute-12-4 \
+        cuda-nsight-systems-12-4 && \
     apt-get clean
 
 # misc tool install
@@ -74,11 +75,11 @@ WORKDIR /home/workspace
 COPY workspace/ /home/workspace
 
 # conda install
-RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2023.07-1-Linux-x86_64.sh -O ~/anaconda.sh && \
+RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh -O ~/anaconda.sh && \
     /bin/bash ~/anaconda.sh -b -p /opt/conda && \
     rm ~/anaconda.sh && \
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
-    conda create -n sd_profile && echo "conda activate sd_profile" >> ~/.bashrc
+    conda create -n llm_profile && echo "conda activate llm_profile" >> ~/.bashrc
 
 CMD [ "/bin/bash" ]
